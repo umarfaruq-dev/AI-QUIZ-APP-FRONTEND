@@ -1,4 +1,3 @@
-//const BASE_URL = "http://127.0.0.1:8000/api";
 const BASE_URL = "https://ai-quiz-app-quwj.onrender.com/api"
 
 // -----------------------------
