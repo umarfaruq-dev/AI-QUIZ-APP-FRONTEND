@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const BASE_URL = "http://127.0.0.1:8000/api/auth";
+const BASE_URL = "https://ai-quiz-app-quwj.onrender.com/api/auth";
 
 export default function AuthPage() {
   const navigate = useNavigate();
