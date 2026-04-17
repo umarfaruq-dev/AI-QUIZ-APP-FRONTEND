@@ -1,0 +1,326 @@
+/* -----------------------------
+   🌍 BASE
+----------------------------- */
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+  min-height: 100vh;
+  color: #111827;
+}
+
+/* -----------------------------
+   📦 CONTAINER
+----------------------------- */
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* -----------------------------
+   🔤 INPUTS
+----------------------------- */
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #6366f1;
+}
+
+/* -----------------------------
+   🔘 BUTTONS
+----------------------------- */
+button {
+  padding: 12px 18px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #6366f1;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #4f46e5;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* -----------------------------
+   🔄 MODE SWITCH
+----------------------------- */
+.mode-switch {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mode-switch button {
+  background: #ccc;
+}
+
+.mode-switch button.active {
+  background: #6366f1;
+}
+
+/* -----------------------------
+   📄 FILE CARD
+----------------------------- */
+.file-card {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-name {
+  font-weight: bold;
+}
+
+.file-size {
+  font-size: 12px;
+  color: #666;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* -----------------------------
+   👤 PROFILE BAR
+----------------------------- */
+.profile-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.profile-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.profile-sub {
+  font-size: 13px;
+  color: #666;
+}
+
+/* -----------------------------
+   🔘 QUIZ OPTIONS
+----------------------------- */
+.option-btn {
+  width: 100%;
+  min-height: 50px;
+  margin: 10px 0;
+  padding: 12px 14px;
+
+  background: #f1f5f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  text-align: left;
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  color: #111827; /* ✅ ADD THIS */
+}
+
+.option-btn:hover {
+  background: #e0e7ff;
+}
+
+/* ✅ Selected */
+.option-btn.selected {
+  background: #6366f1;
+  color: white;
+  border-color: #6366f1;
+}
+
+/* -----------------------------
+   ⏳ LOADING
+----------------------------- */
+.spinner {
+  border: 5px solid #eee;
+  border-top: 5px solid #6366f1;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  animation: spin 1s linear infinite;
+  margin: 40px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-btn {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #d9363e;
+}
+
+/* 🔒 Full screen overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.6); /* dark blur */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999; /* 🔥 ensures it's above everything */
+
+  backdrop-filter: blur(4px); /* optional nice effect */
+}
+
+/* 📦 Modal box */
+.modal {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+
+  width: 400px;
+  max-width: 90%;
+
+  max-height: 80vh;
+  overflow-y: auto;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+  animation: fadeIn 0.2s ease;
+}
+
+/* ✨ animation */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 🧾 stat card */
+.stat-card {
+  background: #f5f5f5;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+/* 🔴 close button */
+.modal button {
+  margin-top: 15px;
+  padding: 8px 12px;
+  border: none;
+  background: #1677ff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 📊 Summary grid */
+.stats-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* 📦 Boxes */
+.stat-box {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.stat-box span {
+  display: block;
+  font-size: 12px;
+  color: #777;
+}
+
+.stat-box strong {
+  font-size: 18px;
+}
+
+/* 🎯 Colors */
+.stat-box.correct {
+  background: #e6fffb;
+  color: #08979c;
+}
+
+.stat-box.wrong {
+  background: #fff1f0;
+  color: #cf1322;
+}
+
+.stat-box.accuracy {
+  background: #f6ffed;
+  color: #389e0d;
+}
+
+/* 📜 History cards */
+.stat-card {
+  background: #fafafa;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+}
