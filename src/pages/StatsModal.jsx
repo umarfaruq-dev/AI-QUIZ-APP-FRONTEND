@@ -13,7 +13,7 @@ export default function StatsModal({ onClose }) {
       }
 
       try {
-        const res = await fetch("http://localhost:8000/api/stats", {
+        const res = await fetch("https://ai-quiz-app-quwj.onrender.com/api/stats", {
           headers: {
             Authorization: `Bearer ${token}`
           }
